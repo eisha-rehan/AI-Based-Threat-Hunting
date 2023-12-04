@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Analysis Results</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e7eff6;
+        text-align: center;
+        padding: 40px;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        max-width: 400px;
+      }
+      h1,
+      h2 {
+        color: #333;
+      }
+      p {
+        color: #555;
+      }
+      a {
+        display: inline-block;
+        background-color: #5c6bc0;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+      }
+      a:hover {
+        background-color: #3f51b5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Analysis Results</h1>
+      {% if intrusion_result %}
+      <h2>Network Attack Result:</h2>
+      <p>{{ intrusion_result }}</p>
+      {% endif %} {% if malware_result %}
+      <h2>Malware Detection Result:</h2>
+      <p>Total Files Analyzed: {{ malware_result.total }}</p>
+      <p>Malicious Files Detected: {{ malware_result.malicious }}</p>
+      <p>Benign Files Detected: {{ malware_result.benign }}</p>
+      {% endif %}
+      <a href="/">Analyze Another File</a>
+    </div>
+  </body>
+</html>

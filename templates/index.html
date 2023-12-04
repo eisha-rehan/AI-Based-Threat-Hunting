@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Attack Detection</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e7eff6;
+        text-align: center;
+        padding: 40px;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        max-width: 400px;
+      }
+      h1 {
+        color: #333;
+      }
+      label {
+        margin-top: 15px;
+        display: block;
+        color: #555;
+      }
+      input,
+      select {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      button {
+        margin-top: 20px;
+        background-color: #5c6bc0;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #3f51b5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upload File for Analysis</h1>
+      <form action="/" method="post" enctype="multipart/form-data">
+        <div>
+          <label for="fileUpload">Choose a file:</label>
+          <input type="file" id="fileUpload" name="fileUpload" required />
+        </div>
+        <div>
+          <label for="attackType">Select Attack Type:</label>
+          <select id="attackType" name="attackType">
+            <option value="network">Network Attack</option>
+            <option value="malware">Malware Attack</option>
+          </select>
+        </div>
+        <button type="submit">Analyze</button>
+      </form>
+    </div>
+  </body>
+</html>
